@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.canvas {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #2c3e50 0%, #4a6990 100%);
+    position: relative;
+    overflow: hidden;
+}
+.hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ecf0f1;
+    font-family: "微软雅黑", sans-serif;
+}
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.logo {
+    width: 30px;
+    height: 30px;
+    background-color: #9b59b6;
+    border-radius: 50% 50% 50% 0;
+}
+.title h1 {
+    font-size: 2.5rem;
+    color: #9b59b6;
+}
+.hint p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    opacity: 0.9;
+}
+.hint span {
+    color: #3498db;
+    font-weight: bold;
+}
+.shape {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    animation: fadeIn 0.4s ease forwards;
+    opacity: 0;
+    transform: scale(0);
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+.shape.remove {
+    animation: fadeOut 0.3s ease forwards;
+}
+.circle {
+    border-radius: 50%;
+}
+.rounded {
+    border-radius: 8px;
+}
+.triangle {
+    width: 0;
+    height: 0;
+    background: transparent;
+    border-width: 0 20px 35px 20px;
+    border-style: solid;
+}
+.parallelogram {
+    transform: skew(-20deg);
+}
+.li-jiao-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100; /* 确保在最上层 */
+}
+
+.li-jiao-box {
+    background-color: #9b59b6;
+    color: white;
+    padding: 2rem 3rem;
+    border-radius: 15px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(155, 89, 182, 0.8);
+    animation: popIn 0.5s ease forwards, popOut 0.5s ease 2s forwards;
+    opacity: 0;
+    transform: scale(0.5);
+}
+@keyframes popIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes popOut {
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
